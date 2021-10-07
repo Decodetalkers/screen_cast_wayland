@@ -1,0 +1,11 @@
+/build
+/CMakeFiles
+/pipewire_autogen
+/screenshot_autogen
+/libportal
+/.cache
+./.cache
+Makefile
+compile_commands.json
+cmake_install.cmake
+

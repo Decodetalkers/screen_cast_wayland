@@ -38,7 +38,7 @@
 ## Generated from screenshot.pro.
 #
 cmake_minimum_required(VERSION 3.16)
-project(screenshot LANGUAGES CXX)
+project(waylandshot LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -52,7 +52,7 @@ if(NOT DEFINED INSTALL_EXAMPLESDIR)
   set(INSTALL_EXAMPLESDIR "examples")
 endif()
 
-set(INSTALL_EXAMPLEDIR "${INSTALL_EXAMPLESDIR}/widgets/desktop/screenshot")
+set(INSTALL_EXAMPLEDIR "${INSTALL_EXAMPLESDIR}/widgets/desktop/waylandshot")
 
 find_package(Qt6 COMPONENTS Core)
 find_package(Qt6 COMPONENTS Gui)
@@ -83,15 +83,15 @@ set(PROJECT_SOURCES
 #    QObject
 #    screenshot_adaptor
 #)
-qt_add_executable(screenshot 
+qt_add_executable(waylandshot 
     ${PROJECT_SOURCES}
 )
 
-set_target_properties(screenshot PROPERTIES
+set_target_properties(waylandshot PROPERTIES
     WIN32_EXECUTABLE TRUE
     MACOSX_BUNDLE TRUE
 )
-target_link_libraries(screenshot PUBLIC
+target_link_libraries(waylandshot PUBLIC
     Qt::Core
     Qt::Gui
     Qt::Widgets
@@ -99,7 +99,7 @@ target_link_libraries(screenshot PUBLIC
     /usr/lib/libpipewire-0.3.so
 )
 
-install(TARGETS screenshot
+install(TARGETS waylandshot
     RUNTIME DESTINATION "${INSTALL_EXAMPLEDIR}"
     BUNDLE DESTINATION "${INSTALL_EXAMPLEDIR}"
     LIBRARY DESTINATION "${INSTALL_EXAMPLEDIR}"

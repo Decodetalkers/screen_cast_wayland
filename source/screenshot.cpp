@@ -109,6 +109,7 @@ Screenshot::Screenshot() : screenshotLabel(new QLabel(this)) {
   buttonsLayout->addWidget(quitScreenshotButton);
   buttonsLayout->addStretch();
   mainLayout->addLayout(buttonsLayout);
+  new ScreenshotAdaptor(this);
   QDBusConnection::sessionBus().registerObject("/", this);
 
   // here has shot already
@@ -176,6 +177,7 @@ void Screenshot::saveScreenshot() {
 // TODO change this one to pipewire
 void Screenshot::shootScreen() {
   WaylandScreen *iface = new WaylandScreen("sss","sss",QDBusConnection::sessionBus(),this);
+  qDebug() << "delay";
   QVariantMap map;
   map["string"] = QVariant("bar");
   map["bool"] = QVariant(true);

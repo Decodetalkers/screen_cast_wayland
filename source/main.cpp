@@ -60,8 +60,15 @@ int main(int argc, char *argv[]) {
                  "Please check your system settings and try again.\n");
         return 1;
     }
+    QDBusConnection connection = QDBusConnection::systemBus();
+    qDebug() << connection.isConnected();
 
   Screenshot screenshot;
+   // if(!connection.registerService("org.freedesktop.portal.Screenshot")){
+   //     qDebug() << "error";
+   //     app.exit(1);
+   //     return 1;
+   // }
   screenshot.move(screenshot.screen()->availableGeometry().topLeft() +
                   QPoint(20, 20));
   screenshot.show();
